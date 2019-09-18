@@ -1,0 +1,29 @@
+msgid "Mon"
+msgstr "Monday"
+
+msgid "Tues"
+msgstr "Tuesday"
+
+msgid "Wed"
+msgstr "Wednesday"
+
+msgid "Thur"
+msgstr "Thursday"
+
+msgid "Fri"
+msgstr "Friday"
+
+msgid "Sat"
+msgstr "Saturday"
+
+msgid "Sun"
+msgstr "Sunday"
+
+msgid "year"
+msgstr "."
+
+msgid "month"
+msgstr "."
+
+msgid "date"
+msgstr ""

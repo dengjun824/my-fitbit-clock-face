@@ -1,0 +1,29 @@
+{
+  "fitbit": {
+    "appUUID": "2cbbe843-c11e-4ef8-aaa6-8054fb33d036",
+    "appType": "clockface",
+    "appDisplayName": "my-clock",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "",
+    "requestedPermissions": [
+      "access_activity",
+      "access_heart_rate"
+    ],
+    "buildTargets": [
+      "meson",
+      "gemini"
+    ],
+    "i18n": {
+      "en": {
+        "name": "my-clock"
+      },
+      "zh-cn": {
+        "name": "智能手表"
+      }
+    },
+    "defaultLanguage": "zh-CN"
+  },
+  "devDependencies": {
+    "@fitbit/sdk": "~3.1.0"
+  }
+}

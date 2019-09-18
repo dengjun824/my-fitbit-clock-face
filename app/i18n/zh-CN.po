@@ -1,0 +1,44 @@
+msgid "Mon"
+msgstr "星期一"
+
+msgid "Tues"
+msgstr "星期二"
+
+msgid "Wed"
+msgstr "星期三"
+
+msgid "Thur"
+msgstr "星期四"
+
+msgid "Friday"
+msgstr "星期五"
+
+msgid "Sat"
+msgstr "星期六"
+
+msgid "Sun"
+msgstr "星期日"
+
+msgid "year"
+msgstr "年"
+
+msgid "month"
+msgstr "月"
+
+msgid "date"
+msgstr "日"
+
+msgid "Goal"
+msgstr "目标"
+
+msgid "Heart rate"
+msgstr "心率"
+
+msgid "Resting Heart Rate"
+msgstr "静息心率"
+
+msgid "stats"
+msgstr "统计数据"
+
+msgid "Steps"
+msgstr "步数"
