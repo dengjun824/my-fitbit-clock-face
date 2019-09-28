@@ -2,7 +2,7 @@
   "fitbit": {
     "appUUID": "2cbbe843-c11e-4ef8-aaa6-8054fb33d036",
     "appType": "clockface",
-    "appDisplayName": "my-clock",
+    "appDisplayName": "DJL Clock",
     "iconFile": "resources/icon.png",
     "wipeColor": "",
     "requestedPermissions": [
@@ -15,7 +15,7 @@
     ],
     "i18n": {
       "en": {
-        "name": "my-clock"
+        "name": "DJL Clock"
       },
       "zh-cn": {
         "name": "智能手表"

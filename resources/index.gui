@@ -1,5 +1,8 @@
 <svg class="screen">
-  <text id="myCalendar" x="50%" y="5%+10" fill="white" font-size="18"
+  <svg class="battery_class" x="133" y="5%">
+    <use href="#battery"></use>
+  </svg>
+  <text id="myCalendar" x="50%" y="100%-15" fill="white" font-size="20"
 		text-anchor="middle" text-length="100"></text>
   <arc id="clock_sec" />
   <arc id="clock_min" />
@@ -8,24 +11,24 @@
         font-size="50" font-family="Seville-Bold-Condensed" text-anchor="middle" text-length="100"></text>
   <text id="text_sec" x="50%" y="$-5" fill="white" 
         font-size="30" font-family="Seville-Condensed" text-anchor="middle" text-length="50"></text>
-  <svg id="steps" x="0%" y="5%+10" width="40" height="60">
+  <svg id="steps" x="0%" y="10" width="50" height="60">
      <image class="stat_icon" x="20" y="5%" href="icon/stat_steps_solid_48px.png" fill="#00FA9A"/>
-     <text id="text_steps" x="32" y="50" fill="white" 
-        font-size="18" font-family="Fabrikat" text-anchor="middle" text-length="100">56</text>
+     <text id="text_steps" x="35" y="55" fill="white" 
+        font-size="20" font-family="Fabrikat" text-anchor="middle" text-length="100">56</text>
   </svg>
-  <svg id="calories" x="0%" y="100%-70" width="40" height="60">
+  <svg id="calories" x="0%" y="100%-70" width="50" height="60">
      <image class="stat_icon"  x="20" y="5%" href="icon/stat_cals_solid_48px.png" fill="#00FA9A"/>
-     <text id="text_calories" x="32" y="50" fill="white" 
-        font-size="18" font-family="Fabrikat" text-anchor="middle" text-length="100">56</text>
+     <text id="text_calories" x="35" y="55" fill="white" 
+        font-size="20" font-family="Fabrikat" text-anchor="middle" text-length="100">56</text>
   </svg>
-  <svg id="distance" x="100%-50" y="5%+10" width="40" height="60">
+  <svg id="distance" x="100%-50" y="10" width="50" height="60">
      <image class="stat_icon"  x="6" y="5%" href="icon/stat_dist_solid_48px.png" fill="#00FA9A"/>
-     <text id="text_distance" x="18" y="50" fill="white" 
-        font-size="18" font-family="Fabrikat" text-anchor="middle" text-length="100">56</text>
+     <text id="text_distance" x="20" y="55" fill="white" 
+        font-size="20" font-family="Fabrikat" text-anchor="middle" text-length="100">56</text>
   </svg>
-  <svg id="heart_rate" x="100%-50" y="100%-70" width="40" height="60">
+  <svg id="heart_rate" x="100%-50" y="100%-70" width="50" height="60">
      <image class="stat_icon"  x="6" y="5%" href="icon/stat_hr_solid_48px.png" fill="#FF69B4"/>
-     <text id="text_heart_rate" x="18" y="50" fill="white" 
-        font-size="18" font-family="Fabrikat" text-anchor="middle" text-length="100"></text>
+     <text id="text_heart_rate" x="20" y="55" fill="white" 
+        font-size="20" font-family="Fabrikat" text-anchor="middle" text-length="100"></text>
   </svg>
 </svg>

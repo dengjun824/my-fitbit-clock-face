@@ -4,6 +4,9 @@ import {gettext} from "i18n";
 import { me as appbit } from "appbit";
 import {today} from "user-activity";
 import { HeartRateSensor } from "heart-rate";
+import { preferences } from "user-settings";
+import { battery } from "power";
+import { charger } from "power";
 
 let myClock = document.getElementById("myClock");
 let myCalendar = document.getElementById("myCalendar");
@@ -16,16 +19,20 @@ clock.granularity = 'seconds'; // seconds, minutes, hours
 clock.ontick = function(evt) {
     
     myCalendar.text = getDate(evt.date) + " " + getDay(evt.date.getDay());
-    _getUserActivity();
-/*heart rate reading*/ 
-    if (HeartRateSensor) {
-      const hrm = new HeartRateSensor({ frequency: 1 });
-      hrm.addEventListener("reading", () => {
-        myHeartReate.text = hrm.heartRate;
-      });
-      hrm.start();
+    let isPowerUpdate = _setBattery();
+    if(!isPowerUpdate){
+      _getUserActivity();
+      /*heart rate reading*/ 
+      if (HeartRateSensor) {
+        const hrm = new HeartRateSensor({ frequency: 1 });
+        hrm.addEventListener("reading", () => {
+          myHeartReate.text = hrm.heartRate;
+        });
+        hrm.start();
+      }
     }
 };
+
 
 function _getUserActivity(){
   if( appbit.permissions.granted("access_activity") ) {
@@ -38,8 +45,8 @@ function _getUserActivity(){
 }
 
 function getDay(day){
-	let days = ["Mon", "Tues", "Wed", "Thur", "Fri", "Sat", "Sun"];
-  let dayMesgId = days[day-1];
+	let days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
+  let dayMesgId = days[day];
 	return gettext(dayMesgId);
 }
 
@@ -51,7 +58,10 @@ function getDate(oDate){
 	let month = oDate.getMonth()+1;
 	let date = oDate.getDate();
   let oText = document.getElementById("text_hour_min");
-  oText.text = oDate.getHours() + " : " + oDate.getMinutes();
+  let sMinute = oDate.getMinutes()>=10 ? oDate.getMinutes() : "0"+oDate.getMinutes();
+  let sHour = preferences.clockDisplay === "12h" ? (oDate.getHours()||12) : oDate.getHours();
+  sHour = sHour>=10 ? sHour : "0"+sHour;
+  oText.text = sHour + " : " + sMinute;
   return year+gettext("year")+month+gettext("month")+date+gettext("date");
 }
 
@@ -127,6 +137,34 @@ function setArc(oArc, oOption) {
       oArc.startAngle = 0;
       oArc.sweepAngle = oOption.theta;
 }
+
+function _setBattery(){
+  let oBattery = document.getElementById("battery");
+  let oBatteryText = document.getElementById("text_charge_level");
+  let oBatteryLevel = document.getElementById("charge_level");
+  let oChargerIcon = document.getElementById("charger_icon");
+  var sChargeLevel = battery.chargeLevel;
+  if(sChargeLevel+"%" === oBatteryText.text){
+    return false;
+  }
+  oBatteryLevel.width = sChargeLevel/100*28;
+  oBatteryText.text = sChargeLevel+"%";
+  if (sChargeLevel > 50){
+    oBatteryLevel.style.fill = "lime";
+  }else if (sChargeLevel > 20){
+    oBatteryLevel.style.fill = "peach";
+  }else{
+    oBatteryLevel.style.fill = "red";
+  }
+  if (charger.connected){
+    oChargerIcon.style.display = "inline";
+  }else{
+    oChargerIcon.style.display = "none";
+  }
+  return true;
+  // console.log(oBattery.width);
+}
+
 
 
 

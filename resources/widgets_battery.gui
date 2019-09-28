@@ -1,0 +1,10 @@
+<svg>
+<symbol id="battery">
+  <rect x="0" y="0" width="30" height="10" fill="white" />
+  <rect x="$+1" y="3" width="3" height="4" fill="white"/>
+  <image id="charger_icon"  x="$+2" y="0" width="10" height="10" href="icon/stat_am_solid_24px.png" fill="lime"/>
+  <text x="$+5" y="9" font-size="12" fill="white" text-length="50" id="text_charge_level"></text>
+  <rect id="charge_level" x="1" y="1" width="28" height="8" fill="lime"/>
+</symbol>
+</svg>
+  

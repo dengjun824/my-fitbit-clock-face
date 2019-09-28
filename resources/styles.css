@@ -9,8 +9,8 @@ text {font-family: "Fabrikat";}
 arc {z-index: 99;}
 
 .stat_icon {
-  width: 24;
-  height: 24;
+  width: 30;
+  height: 30;
 }
 
 #clock_sec{
